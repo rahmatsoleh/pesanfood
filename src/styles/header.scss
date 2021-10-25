@@ -1,0 +1,24 @@
+@use 'root';
+
+header {
+    background-color: white;
+    color: root.$color-scondary-2;
+    padding: .5em .5em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+
+    div {
+       display:flex;
+       justify-content: space-between;
+    }
+}
+
+@media  screen and (min-width: 480px) {
+    header {
+        div {
+            justify-content: center;
+        }
+    }
+}

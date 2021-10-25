@@ -1,0 +1,66 @@
+@use 'root';
+
+@mixin hamburger {
+    width: 30px;
+    height: 5px;
+    background-color: root.$color-scondary-2;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    margin-right: 1em;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    background-color: root.$color-light;
+    border: 1px solid root.$color-scondary-2;
+    border-radius: 5px;
+
+    &__burger {
+        @include hamburger();
+    }
+
+    &__burger::before,
+    &__burger::after {
+        @include hamburger();
+        content: '';
+        position: absolute;
+    }
+
+    &__burger::before {
+        transform: translateY(-10px);
+    }
+
+    &__burger::after {
+        transform: translateY(10px);
+    }
+
+    // Animation
+    &.open &__burger {
+        background-color: transparent;
+    }
+
+    &.open {
+        box-shadow: 0 0 5px root.$color-scondary-2;
+    }
+
+    &.open &__burger::before {
+        transform: rotate(45deg);
+    }
+
+    &.open &__burger::after {
+        transform: rotate(-45deg);
+    }
+}
+
+
+@media screen and (min-width: 480px){
+    .menu-btn {
+        display: none;
+    }
+}

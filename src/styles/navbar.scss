@@ -1,0 +1,66 @@
+@use 'root';
+
+nav {
+    background-color: root.$color-light;
+    position: absolute;
+    width: 80%;
+    margin: 1em auto;
+    text-align: center;
+    right: 0;
+    left: 0;
+    padding: .5em 0;
+    transform: translateX(-100vw);
+    transition: .5s ease-in-out;
+
+    ul {
+        li {
+            list-style: none;
+            padding: .7em;
+
+            a {
+                text-decoration: none;
+                font-weight: 500;
+                color: root.$color-scondary-2;
+            }
+
+            a:hover {
+                display: inline-block;
+                transform: translateY(-3px);
+                transition: .7s;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+nav.open {
+    transition: .5s ease-in-out;
+    transform: translateX(0);
+}
+
+@media screen and (min-width: 480px){
+    nav {
+        transform: translateX(0);
+        position: inherit;
+        width: 100%;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            li {
+                display: inline-block;
+                padding: 0;
+                margin: 0 2em;
+
+                a {
+                    color: root.$color-scondary-1;
+                }
+            }
+        }
+    }
+    
+}
