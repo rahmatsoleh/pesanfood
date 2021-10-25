@@ -15,12 +15,27 @@ class BurgerMenu extends HTMLElement {
         document.querySelector('.menu-btn').addEventListener('click', this.menuOpen);
     }
 
-    menuOpen(){
+    menuClose(){
+        const menuBtn = document.querySelector('.menu-btn');
+        const nav = document.querySelector('nav');
+
+        menuBtn.classList.remove('open');
+        nav.classList.remove('open');
+    }
+
+    menuOpen(event){
         const menuBtn = document.querySelector('.menu-btn');
         const nav =document.querySelector('nav');
 
         menuBtn.classList.toggle('open');
         nav.classList.toggle('open');
+        event.stopPropagation();
+
+        document.body.addEventListener('click', event => {
+            menuBtn.classList.remove('open');
+            nav.classList.remove('open');
+            event.stopPropagation();
+        })
     }
 }
 

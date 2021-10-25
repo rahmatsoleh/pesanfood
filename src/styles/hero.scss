@@ -1,0 +1,98 @@
+@use 'root';
+
+.hero {
+    margin-top: 10px;
+    width: 100%;
+    height: 350px;
+    background-image: url(../public/images/heros/hero-image_2.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero-text {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+
+        .top-slogan {
+            color: root.$color-scondary-2;
+            font-weight: 400;
+            text-shadow: 0 0 1px root.$color-scondary-2;
+        }
+
+        .main-slogan {
+            color: white;
+            font-weight: bolder;
+            font-size: 1.5em;
+        }
+
+        .bottom-slogan {
+            color: root.$color-light;
+        }
+
+        .btn-order {
+            display: inline-block;
+            margin-top: 3em;
+            background-color: root.$color-scondary-2;
+            text-decoration: none;
+            color: root.$color-light;
+            padding: .5em 1em;
+            border-radius: 50px;
+        }
+
+        .btn-order:hover {
+            background-color: root.$color-scondary-1;
+        }
+    }
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,.3));
+}
+
+@media  screen and (min-width: 768px) {
+    .hero {
+        .hero-text {
+            .top-slogan {
+                font-size: 1.5em;
+            }
+
+            .main-slogan {
+                font-size: 2em;
+            }
+
+            .bottom-slogan {
+                font-size: 1.2em;
+            }
+
+            .btn-order {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+
+    .hero {
+        width: 90%;
+        min-width: 1000px;
+        border-radius: 10px;
+        margin: 10px auto;
+    }
+
+    .hero::after {
+        width: 100%;
+        min-width: 1000px;
+        border-radius: 10px;
+    }
+}

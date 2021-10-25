@@ -9,7 +9,7 @@ class AppBar extends HTMLElement {
     render(){
         this.innerHTML = `
             <div>
-                <h1>R'Food</h1>
+                <h1>PesanFood</h1>
                 <burger-menu></burger-menu>
             </div>
         `;
