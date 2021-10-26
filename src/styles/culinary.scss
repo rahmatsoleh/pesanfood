@@ -2,7 +2,6 @@
 
 .culinary {
     padding-top: 2em;
-    padding-bottom: 6em;
 
     h2 {
         color: root.$color-scondary-1; 
@@ -11,16 +10,14 @@
     }
 
     .btn-view-all {
-        display: innline-block;
-        text-align: end;
+        display: block;
+        width: fit-content;
         background-color: root.$color-scondary-2;
         text-decoration: none;
         color: root.$color-light;
         padding: .5em 1em;
-        border-radius: 50px;
-        position: absolute;
-        right: 0;
-        margin: 1em 1em;
+        border-radius: 5px;
+        margin: 0 auto;
     }
 
     .btn-view-all:hover {
@@ -73,6 +70,11 @@
 
 @media screen and (min-width: 768px){
     .culinary {
+
+        h2 {
+            font-size: 2em;
+        }
+
         padding-bottom: 1em;
         .btn-view-all {
             position: inherit;

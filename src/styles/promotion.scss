@@ -1,0 +1,109 @@
+@use 'root';
+
+.promotion {
+    padding-top: 3em;
+    h2 {
+        color: root.$color-scondary-2;
+        margin: 0 .5em .5em;
+    }
+
+    .data-promotion::-webkit-scrollbar{
+        width: 0;
+    }
+
+    .data-promotion {
+        padding: 1em 1em;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1.5em;
+
+        section {
+            width: 250px;
+            height: 100px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-right: .5em;
+            background-color: white;
+            border: 2px solid #ddd;
+            box-shadow: 0px 3px 10px rgba(0,0,0,.3);
+
+            a {
+                display: flex;
+                width: 100%;
+                text-decoration: none;
+                color: root.$color-dark;
+            }
+    
+            .picture {
+                border-radius: 10px;
+                overflow: hidden;
+                width: 120px;
+                height: 100px;
+                margin-right: .5em;
+                position: relative;
+            }
+
+            .picture::after{
+                content: 'Promo';
+                text-align: center;
+                width: 50px;
+                color: yellow;
+                background-color: root.$color-primary;
+                position: absolute;
+                left: 0;
+                top: 10px;
+                display: inline-block;
+                padding: .1em .5em;
+                border-radius: 0 5px 5px 0;
+            }
+    
+            .desc-promotion {
+                height: 100%;
+                padding-top: .5em;
+                max-width: 120px;
+                display: flex;
+                flex-direction: column;
+                text-overflow: ellipsis;
+            }
+    
+            img {
+                width: 100%;
+                height: 100%;
+            }
+    
+            h3 {
+                font-size: .9em;
+                margin-bottom: .5em;
+
+            }
+    
+            p {
+                font-size: .8em;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+    .promotion {
+        h2 {
+            font-size: 2em;
+            color: root.$color-scondary-2;
+        }
+        .data-promotion {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            section:hover {
+                transform: translateY(-5px);
+                transition: .5s;
+            }
+        }
+    }
+}
