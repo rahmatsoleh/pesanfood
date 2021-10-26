@@ -1,0 +1,106 @@
+@use 'root';
+
+.culinary {
+    padding-top: 2em;
+    padding-bottom: 6em;
+
+    h2 {
+        color: root.$color-scondary-1; 
+        margin-bottom: 1em;
+        margin-left: .5em;
+    }
+
+    .btn-view-all {
+        display: innline-block;
+        text-align: end;
+        background-color: root.$color-scondary-2;
+        text-decoration: none;
+        color: root.$color-light;
+        padding: .5em 1em;
+        border-radius: 50px;
+        position: absolute;
+        right: 0;
+        margin: 1em 1em;
+    }
+
+    .btn-view-all:hover {
+        background-color: root.$color-scondary-1;
+    }
+
+    .various::-webkit-scrollbar{
+        width: 0;
+    }
+
+    .various {
+        padding: 0 1em 0 3em;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: 1fr;
+        column-gap: 1.5em;
+
+        section {
+            width: fit-content;
+            text-align: center;
+
+            a {
+                text-decoration: none;
+            }
+
+            h3 {
+                margin-top: .7em;
+                color: root.$color-dark;
+            }
+        }
+        .zoom-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .culinary {
+        padding-bottom: 1em;
+        .btn-view-all {
+            position: inherit;
+            display: block;
+            width: fit-content;
+            margin: 2em auto;
+        }
+
+        .various {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            section {
+                margin: 1.5em;
+            }
+
+            .zoom-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .zoom-image:hover > img {
+                transition: 1s;
+                transform: scale(1.5);
+            }
+        }
+    }
+}

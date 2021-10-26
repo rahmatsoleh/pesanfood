@@ -17,3 +17,15 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    min-height: 1500px;
+    background-color: $color-light;
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+
