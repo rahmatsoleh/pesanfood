@@ -5,5 +5,6 @@ import './component/Navbar';
 import './component/Hero';
 import './component/VariousCulinary';
 import './component/Promotion';
+import './component/Banner';
 
 console.log('Hello Coders! :)');

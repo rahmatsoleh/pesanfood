@@ -1,0 +1,97 @@
+@use 'root';
+
+.banner {
+    margin-top: 3em;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    
+    .slider {
+        display: grid;
+        grid-auto-flow: column;
+        overflow: hidden;
+        width: 100%;
+    
+        .slide {
+            animation: slider 16s ease 3s infinite;
+            img {
+                width: 100vw;
+            }
+        }
+    
+    }
+
+    .banner-post {
+        padding: 2em 1em;
+
+        p:first-child {
+            color: root.$color-scondary-2;
+            font-weight: 700;
+            margin-bottom: .5em;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+    }
+}
+
+@media screen and (min-width: 468px){
+    .banner {
+        .slider {
+            height: 300px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .banner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 3em 0;
+
+        .slider {
+            width: 50vw;
+            height: 350px;
+            border-radius: 10px;
+        }
+
+        .banner-post {
+            max-width: 40vw;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .banner {
+        padding: 3em;
+
+        .slider {
+            height: 450px;
+        }
+    }
+}
+
+@keyframes slider {
+    0% {margin-left: 0%}
+    5% {margin-left: 0%}
+    10% {margin-left: 0%}
+    15% {margin-left: -100%}
+    25% {margin-left: -100%}
+    30% {margin-left: -100%}
+    40% {margin-left: -100%}
+    45% {margin-left: -200%}
+    55% {margin-left: -200%}
+    60% {margin-left: -200%}
+    65% {margin-left: -200%}
+    75% {margin-left: -300%}
+    80% {margin-left: -300%}
+    85% {margin-left: -300%}
+    95% {margin-left: -300%}
+    100% {margin-left: 0%}
+}
