@@ -1,0 +1,10 @@
+@use 'root';
+
+footer {
+    display: block;
+    margin-top: 2em;
+    background-color: root.$color-dark;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}

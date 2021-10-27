@@ -6,5 +6,8 @@ import './component/Hero';
 import './component/VariousCulinary';
 import './component/Promotion';
 import './component/Banner';
+import './component/Restaurant';
+import './component/ButtonTop';
+import './component/Footer';
 
 console.log('Hello Coders! :)');
