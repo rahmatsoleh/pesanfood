@@ -7,7 +7,7 @@ class ButtonTop extends HTMLElement {
 
     render(){
         this.innerHTML = `
-            <button class="btn-top"><i class="fas fa-angle-double-up"></i></button>
+            <button class="btn-top" aria-label="Scroll Top"><i class="fas fa-angle-double-up"></i></button>
         `;
 
         window.addEventListener('scroll', this.scrollFunction);
@@ -27,6 +27,7 @@ class ButtonTop extends HTMLElement {
     scrollToTop(){
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+        document.querySelector('.skip').focus();
     }
 }
 

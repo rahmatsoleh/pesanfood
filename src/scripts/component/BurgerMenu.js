@@ -7,9 +7,9 @@ class BurgerMenu extends HTMLElement {
 
     render(){
         this.innerHTML = `
-        <div class="menu-btn">
+        <button class="menu-btn" aria-label="Tombol Navigasi">
             <div class="menu-btn__burger"></div>
-        </div>
+        </button>
         `;
 
         document.querySelector('.menu-btn').addEventListener('click', this.menuOpen);

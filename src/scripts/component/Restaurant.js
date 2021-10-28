@@ -14,11 +14,11 @@ class Restaurant extends HTMLElement {
                 <div class="image">
                     <img src="${item.pictureId}" alt="${item.name}">
                 </div>
-                <h3>${item.name}</h3>
+                <h3 tabindex="0">${item.name}</h3>
                 <p class="location"><span><i class="fas fa-map-marker-alt"></i></span> ${item.city}</p>
                 <p class="describe">${item.description}</p>
                 <p class="rating"><span><i class="fas fa-star"></i></span> ${item.rating}</p>
-                <a href="#">Lihat Restoran</a>
+                <a href="#" tabindex="0">Lihat Restoran</a>
             </div>
             `;
         }
@@ -29,7 +29,7 @@ class Restaurant extends HTMLElement {
     render(){
         this.innerHTML = `
             <article class="restaurant">
-                <h2>Temukan Restoran</h2>
+                <h2 tabindex="0">Temukan Restoran</h2>
                 <div class="explore">
                     ${this.dataCard(restaurants)}
                 </div>
