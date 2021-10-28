@@ -15,10 +15,12 @@ class ButtonTop extends HTMLElement {
     }
 
     scrollFunction(){
+        const btn = document.querySelector('.btn-top');
+
         if(document.documentElement.scrollTop > 400){
-            document.querySelector('.btn-top').style.display = 'block';
+            btn.style.display = 'block';
         } else {
-            document.querySelector('.btn-top').style.display = 'none';
+            btn.style.display = 'none';
         }
     }
 

@@ -1,3 +1,4 @@
+import '@fortawesome/fontawesome-free/js/all.js';
 import 'regenerator-runtime'; /* for async await transpile */
 import './component/App-bar';
 import './component/BurgerMenu';

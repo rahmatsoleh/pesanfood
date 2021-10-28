@@ -20,6 +20,10 @@ module.exports = {
             'file-loader',
         ],
       },
+      {
+        test: /font-awesome\.config\.js/,
+        use: [ "style-loade","font-awesome-loader"],
+      }
     ],
   },
   plugins: [
