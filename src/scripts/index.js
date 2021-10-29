@@ -12,4 +12,3 @@ import './component/Restaurant';
 import './component/ButtonTop';
 import './component/Footer';
 
-console.log('Hello Coders! :)');

@@ -27,7 +27,6 @@ class ButtonTop extends HTMLElement {
     scrollToTop(){
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-        document.querySelector('.skip').focus();
     }
 }
 
