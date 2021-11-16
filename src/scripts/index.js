@@ -1,18 +1,16 @@
 import '@fortawesome/fontawesome-free/js/all.js';
 import 'regenerator-runtime'; /* for async await transpile */
-import Home from './views/pages/home';
-// import App from './views/app';
+import App from './views/app';
 
-window.addEventListener('load', () => {
-    const main = document.getElementById('main');
-    main.innerHTML = Home;
+const app = new App({
+    content : document.getElementById('main'),
 })
 
-// window.addEventListener('hashchange', () => {
-//     App.renderPage();
-// });
+window.addEventListener('hashchange', () => {
+    app.renderPage();
+});
 
-// window.addEventListener('load', () => {
-//     App.renderPage();
-// });
+window.addEventListener('load', () => {
+    app.renderPage();
+});
 

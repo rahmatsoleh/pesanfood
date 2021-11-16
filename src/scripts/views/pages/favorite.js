@@ -1,5 +1,3 @@
-import { render } from "node-sass";
-
 const Favorite = {
     async render(){
         return `
