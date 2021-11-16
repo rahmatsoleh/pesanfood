@@ -1,24 +1,24 @@
 @use 'root';
 
-.promotion {
+.category {
     padding-top: 3em;
     h2 {
         color: root.$color-scondary-2;
         margin: 0 .5em .5em;
     }
 
-    .data-promotion::-webkit-scrollbar{
+    .data-category::-webkit-scrollbar{
         width: 0;
     }
 
-    .data-promotion {
+    .data-category {
         padding: 1em 1em;
         width: 100%;
         box-sizing: border-box;
         overflow-x: auto;
         display: grid;
         grid-auto-flow: column;
-        gap: 1.5em;
+        gap: 1.5em 1em;
 
         section {
             width: 250px;
@@ -46,22 +46,8 @@
                 margin-right: .5em;
                 position: relative;
             }
-
-            .picture::after{
-                content: 'Promo';
-                text-align: center;
-                width: 50px;
-                color: yellow;
-                background-color: root.$color-primary;
-                position: absolute;
-                left: 0;
-                top: 10px;
-                display: inline-block;
-                padding: .1em .5em;
-                border-radius: 0 5px 5px 0;
-            }
     
-            .desc-promotion {
+            .desc-category {
                 height: 100%;
                 padding-top: .5em;
                 max-width: 120px;
@@ -76,8 +62,8 @@
             }
     
             h3 {
-                font-size: .9em;
-                margin-bottom: .5em;
+                font-size: 1em;
+                margin-bottom: .3em;
 
             }
     
@@ -90,12 +76,12 @@
 }
 
 @media screen and (min-width: 1024px){
-    .promotion {
+    .category {
         h2 {
             font-size: 2em;
             color: root.$color-scondary-2;
         }
-        .data-promotion {
+        .data-category {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;

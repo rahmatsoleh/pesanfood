@@ -1,4 +1,4 @@
-import '../../styles/skip.scss';
+import '../../../styles/skip.scss';
 
 class Skip extends HTMLElement {
     connectedCallback(){

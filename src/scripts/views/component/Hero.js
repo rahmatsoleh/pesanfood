@@ -1,4 +1,4 @@
-import '../../styles/hero.scss';
+import '../../../styles/hero.scss';
 
 class Hero extends HTMLElement {
     connectedCallback(){

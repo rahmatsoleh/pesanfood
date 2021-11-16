@@ -1,9 +1,9 @@
 @use 'root';
 
 nav {
-    background-color: root.$color-light;
-    position: absolute;
-    z-index: 9;
+    background-color: white;
+    position: fixed;
+    z-index: 999;
     width: 80%;
     margin: 1em auto;
     text-align: center;
@@ -12,6 +12,7 @@ nav {
     padding: .5em 0;
     transform: translateX(-100vw);
     transition: .5s ease-in-out;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
 
     ul {
         li {
@@ -42,12 +43,13 @@ nav.open {
 @media screen and (min-width: 480px){
     nav {
         transform: translateX(0);
-        position: inherit;
+        position: relative;
         width: 100%;
         background-color: transparent;
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        box-shadow: none;
 
         ul {
             display: flex;

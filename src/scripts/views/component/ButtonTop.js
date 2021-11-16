@@ -1,4 +1,4 @@
-import '../../styles/buttontop.scss';
+import '../../../styles/buttontop.scss';
 
 class ButtonTop extends HTMLElement {
     connectedCallback(){
@@ -17,7 +17,7 @@ class ButtonTop extends HTMLElement {
     scrollFunction(){
         const btn = document.querySelector('.btn-top');
 
-        if(document.documentElement.scrollTop > 400){
+        if(document.documentElement.scrollTop > 400 && window.innerWidth >= 768){
             btn.style.display = 'block';
         } else {
             btn.style.display = 'none';

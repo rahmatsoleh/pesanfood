@@ -1,4 +1,4 @@
-import '../../styles/burger-menu.scss';
+import '../../../styles/burger-menu.scss';
 
 class BurgerMenu extends HTMLElement {
     connectedCallback(){

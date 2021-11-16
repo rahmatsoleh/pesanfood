@@ -1,4 +1,4 @@
-import '../../styles/navbar.scss';
+import '../../../styles/navbar.scss';
 
 class Navbar extends HTMLElement {
     connectedCallback(){
