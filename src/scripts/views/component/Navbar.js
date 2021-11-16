@@ -8,9 +8,9 @@ class Navbar extends HTMLElement {
     render(){
         this.innerHTML = `
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#">Favorite</a></li>
-                    <li><a href="https://github.com/rahmatsoleh/pesanfood">About</a></li>
+                    <li><a href="#/home">Home</a></li>
+                    <li><a href="#/favorite">Favorite</a></li>
+                    <li><a href="https://github.com/rahmatsoleh/pesanfood" target="_blank" rel="noreferrer">About</a></li>
                 </ul>
         `;
     }
