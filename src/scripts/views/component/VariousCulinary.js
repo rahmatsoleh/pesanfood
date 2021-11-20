@@ -68,7 +68,7 @@ class VariousCulinary extends HTMLElement {
         for(let item of data){
             card += `
             <section>
-                <a href="">
+                <a href="#/culinary/${item.title.toLowerCase()}">
                     <div class="zoom-image">
                         <img src="${item.img}" alt="${item.title}"/>
                     </div>

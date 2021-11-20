@@ -26,6 +26,7 @@
 
         .card {
             width: 230px;
+            height: fit-content;
             overflow: hidden;
             background-color: white;
             border-radius: 5px;
@@ -70,11 +71,16 @@
                 align-items: center;
             }
 
+            .description {
+                margin-top: 1em;
+                padding: 0 1em;
+            }
+
             a {
                 display: block;
                 width: fit-content;
                 padding: .5em 1em;
-                margin: 2em auto 1em;
+                margin: 1em auto;
                 background-color: root.$color-scondary-2;
                 color: white;
                 border-radius: 5px;
@@ -111,7 +117,7 @@
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
-            align-items: center;
+            align-items: flex-start;
         }
     }
 }

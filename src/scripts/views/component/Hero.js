@@ -12,10 +12,17 @@ class Hero extends HTMLElement {
                     <span class="top-slogan"><p>Butuh makan diantar cepat ?</p></span>
                     <span class="main-slogan"><p>Pengiriman Makanan Dari Resto Terdekat</p></span>
                     <span class="bottom-slogan"><p>makan jadi nikmat dengan pengiriman yang cepat</p></span>
-                    <a href="#" class="btn-order">Pesan Sekarang</a>
+                    <button aria-label="Pesan Sekarang" class="btn-order">Pesan Sekarang</button>
                 </div>
             </div>
         `;
+
+        document.querySelector('.btn-order').onclick = this._order;
+    }
+
+    _order(){
+        const hero = document.querySelector('.hero');
+        window.scrollTo(0, hero.clientHeight);
     }
 }
 

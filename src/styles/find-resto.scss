@@ -1,0 +1,120 @@
+@use 'root';
+
+.search-culinary {
+
+    h2 {
+        margin-top: 2em;
+        margin-bottom: 1em;
+        padding-left: .5em;
+    }
+
+    .main-culinary {
+        .card:hover {
+            transform: translateY(-8px);
+            transition: .5s;
+        }
+        
+        .card {
+            width: 95vw;
+            margin: 1em auto;
+            padding: .5em;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
+            text-decoration: none;
+            color: root.$color-dark;
+
+            .image {
+                width: 40%;
+                min-width: 120px;
+                height: 100px;
+                margin-right: 1em;
+                overflow: hidden;
+                box-sizing: border-box;
+                border-radius: 10px;
+
+                img {
+                    width: auto;
+                    height: 100%;
+                }
+
+            }
+
+            .description {
+                .title {
+                    margin-bottom: .7em;
+
+                    h3 {
+                        font-size: 1.3em;
+                    }
+
+                    p {
+                        span {
+                            color: root.$color-dark;
+                        }
+
+                        .fa-star {
+                            color: yellow;
+                        }
+
+                        .fa-map-marker-alt {
+                            color: root.$color-scondary-2;
+                        }
+
+                    }
+                }
+
+            }
+
+            .info {
+                p {
+                    display: block;
+                    width: 100%;
+                    max-height: 100px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 480px){
+    .search-culinary {
+        h2 {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding-left: 0;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .main-culinary {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+
+            .card {
+                width: 300px;
+                flex-direction: column;
+                padding: .5em 1em 1em;
+                margin: 1em;
+
+                .image {
+                    width: 100%;
+                    height: auto;
+                    margin: 0 auto;
+
+                    img {
+                        width: 100%;
+                    }
+                };
+            }
+        }
+    }
+}

@@ -18,7 +18,7 @@ class Category extends HTMLElement {
                 <h2 tabindex="0">Kategori Makanan</h2>
                 <div class="data-category">
                     <section>
-                        <a href="#">
+                        <a href="#/category/italia">
                             <div class="picture">
                                 <img src="${italia}" alt="Italia"/>
                             </div>
@@ -29,7 +29,7 @@ class Category extends HTMLElement {
                         <a/>
                     </section>
                     <section>
-                        <a href="#">
+                        <a href="#/category/sunda">
                             <div class="picture">
                                 <img src="${sunda}" alt="Sunda"/>
                             </div>
@@ -40,7 +40,7 @@ class Category extends HTMLElement {
                         <a/>
                     </section>
                     <section>
-                        <a href="#">
+                        <a href="#/category/modern">
                             <div class="picture">
                                 <img src="${modern}" alt="Modern"/>
                             </div>
@@ -51,7 +51,7 @@ class Category extends HTMLElement {
                         <a/>
                     </section>
                     <section>
-                        <a href="#">
+                        <a href="#/category/jawa">
                             <div class="picture">
                                 <img src="${jawa}" alt="Jawa"/>
                             </div>
@@ -62,7 +62,7 @@ class Category extends HTMLElement {
                         <a/>
                     </section>
                     <section>
-                        <a href="#">
+                        <a href="#/category/sop">
                             <div class="picture">
                                 <img src="${sop}" alt="Sop"/>
                             </div>
@@ -73,7 +73,7 @@ class Category extends HTMLElement {
                         <a/>
                     </section>
                     <section>
-                        <a href="#">
+                        <a href="#/category/bali">
                             <div class="picture">
                                 <img src="${bali}" alt="Bali"/>
                             </div>
@@ -84,7 +84,7 @@ class Category extends HTMLElement {
                         <a/>
                     </section>
                     <section>
-                        <a href="#">
+                        <a href="#/category/spanyol">
                             <div class="picture">
                                 <img src="${spanyol}" alt="Spanyol"/>
                             </div>
