@@ -10,7 +10,7 @@ const Detail = {
         const url = UrlParser.parseActiveUrlWithoutCombiner();
         const restaurant = await RestaurantApi.detail(url.id);
         const detailContent = ArticleDetail(restaurant);
-        const contentDesktop = viewDesktop();
+        const contentDesktop = viewDesktop(restaurant);
         document.documentElement.scrollTop = 0;
 
         return `
@@ -38,21 +38,21 @@ const Detail = {
             navRating.classList.remove('active');
             navDesc.classList.remove('active');
 
-            document.querySelector('.content-detail').innerHTML = Menu();
+            document.querySelector('.content-detail').innerHTML = Menu(restaurant);
         })
 
         navRating.addEventListener('click', function(){
             this.classList.add('active');
             navMenu.classList.remove('active');
             navDesc.classList.remove('active');
-            document.querySelector('.content-detail').innerHTML = Review();
+            document.querySelector('.content-detail').innerHTML = Review(restaurant);
         })
 
         navDesc.addEventListener('click', function(){
             this.classList.add('active');
             navRating.classList.remove('active');
             navMenu.classList.remove('active');
-            document.querySelector('.content-detail').innerHTML = Description();
+            document.querySelector('.content-detail').innerHTML = Description(restaurant);
         })
     }
 }

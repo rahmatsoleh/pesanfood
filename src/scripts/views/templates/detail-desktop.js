@@ -1,47 +1,49 @@
-import '../../../styles/detail.scss';
-import { tableDetail,foodMenu, drinkMenu, formReview, cardReview } from './element-detail';
+import food from '../../../public/images/culinary/food.png';
+import drink from '../../../public/images/culinary/drink.jpg';
+import API_ENDPOINT from '../../globals/api-endpoint';
+import { tableDetail, foodMenu, drinkMenu, formReview, cardReview } from './element-detail';
 
-const viewDesktop = () => `
-    ${_header()}
-    ${_foodMenu()}
-    ${_review()}
+const viewDesktop = data => `
+    ${_header(data)}
+    ${_foodMenu(data)}
+    ${_review(data.customerReviews)}
 `;
 
-const _header = () => `
+const _header = (data) => `
     <section class="header-desktop">
         <div class="image">
-            <img src="https://restaurant-api.dicoding.dev/images/medium/25" alt="">
+            <img src="${API_ENDPOINT.PICTURE_MD(data.pictureId)}" alt="${data.name}">
         </div>
         <div class="info">
             <div class="title-info">
                 <div>
-                    <h2 tabindex="0">Rahmsol Restoku</h2>
+                    <h2 tabindex="0">${data.name}</h2>
                     <div class="rate">
-                        <p><i class="fas fa-map-marker-alt"></i></i> <span>Jombang</span></p>
-                        <p><i class="fas fa-star"></i><span>5.0</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i></i> <span>${data.city}</span></p>
+                        <p><i class="fas fa-star"></i><span>${data.rating}</span></p>
                     </div>
                 </div>
                 <button aria-label="Add to Favorite"><i class="far fa-heart"></i></button>
             </div>
             <hr>
-            ${tableDetail()}
+            ${tableDetail(data)}
         </div>
     </section>
 `;
 
-const _foodMenu = () => `
+const _foodMenu = (data) => `
     <section class="food-menu">
-        ${foodMenu()}
+        ${foodMenu(data.menus.foods, food)}
     </section>
     <section class="food-menu">
-        ${drinkMenu()}
+        ${drinkMenu(data.menus.drinks, drink)}
     </section>
 `;
 
-const _review = () => `
+const _review = (data) => `
     <section class="desktop-review">
         <div class="customer-review">
-            ${cardReview()}
+            ${cardReview(data)}
         </div>
         <div class="form-review">
             ${formReview()}

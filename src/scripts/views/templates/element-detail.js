@@ -1,22 +1,13 @@
-import food from '../../../public/images/culinary/food.png';
-import drink from '../../../public/images/culinary/drink.jpg';
 import userDefault from '../../../public/images/user.png';
 
-// const foodMenu = (data) => `
-//     <h3>Menu Makanan</h3>
-//     <ul class="card-menu">${_cardFood(data)}</ul>
-// `;
-const foodMenu = data => {
-    console.log(data);
-    return `
-        <h3>Menu Makanan</h3>
-        <ul class="card-menu">${_cardFood(data)}</ul>
-    `;
-}
+const foodMenu = (data, image) => `
+    <h3>Menu Makanan</h3>
+    <ul class="card-menu">${_cardFood(data, image)}</ul>
+`;
 
-const drinkMenu = () => `
+const drinkMenu = (data, image) => `
     <h3>Menu Minuman</h3>
-    <ul class="card-menu">${_cardFood()}</ul>
+    <ul class="card-menu">${_cardFood(data, image)}</ul>
 `;
 
 const formReview = () => `
@@ -24,40 +15,48 @@ const formReview = () => `
     ${_form()}
 `;
 
-const cardReview = () => `
+const cardReview = (data) => `
     <h3>Review Pelanggan</h3>
-    <ul class="card-review">${_cardReview()}</ul>
+    <ul class="card-review">${_cardReview(data)}</ul>
 `;
 
-const tableDetail = () => `
-    <table>
-        <tr>
-            <td>Kategori</td>
-            <td>:</td>
-            <td>Italia, Modern, Jawa</td>
-        </tr>
-        <tr>
-            <td>Alamat</td>
-            <td>:</td>
-            <td>Jln. Pandeglang no 19</td>
-        </tr>
-        <tr>
-            <td>Deskripsi</td>
-            <td>:</td>
-            <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ...</td>
-        </tr>
-    </table>
-`;
+const tableDetail = data => {
+    let category = [];
+    for(let item of data.categories){
+        category.push(item.name);
+    }
 
-const _cardFood = (data) => {
+    return `
+        <table>
+            <tr>
+                <td>Kategori</td>
+                <td>:</td>
+                <td>${category.join(', ')}</td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td>${data.address}</td>
+            </tr>
+            <tr>
+                <td>Deskripsi</td>
+                <td>:</td>
+                <td>${data.description}</td>
+            </tr>
+        </table>
+    `;
+}
+
+
+const _cardFood = (data, image) => {
     let card = '';
 
-    for(let i = 0; i < 10; i++){
+    for(let item of data){
         card+= `
         <li>
-            <img src="${food}">
+            <img src="${image}">
             <div>
-                <h4>Jamur Bandel</h4>
+                <h4>${item.name}</h4>
                 <p>Lorem ipsum sit amet dolor ...</p>
                 <p>Rp 20.000,-</p>
             </div>
@@ -78,17 +77,17 @@ const _form = () => `
     </form>
 `;
 
-const _cardReview = () => {
+const _cardReview = (data) => {
     let card = '';
 
-    for(let i = 0; i < 3; i++){
+    for(let item of data){
         card+= `
         <li>
             <img src="${userDefault}">
             <div>
-                <p>12 Januari 2021</p>
-                <h4>Rahmat Soleh</h4>
-                <p>Lorem ipsum sit amet dolor ...</p>
+                <p>${item.date}</p>
+                <h4>${item.name}</h4>
+                <p>${item.review}</p>
             </div>
         </li>
         `
