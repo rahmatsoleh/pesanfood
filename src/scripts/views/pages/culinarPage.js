@@ -6,6 +6,7 @@ const CulinarPage = {
 
     async render(){
         const url = UrlParser.parseActiveUrlWithoutCombiner();
+        document.documentElement.scrollTop = 0;
 
         return `
             <hero-element></hero-element>

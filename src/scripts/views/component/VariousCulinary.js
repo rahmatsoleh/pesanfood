@@ -58,7 +58,7 @@ class VariousCulinary extends HTMLElement {
                 <div class="various">
                     ${this._categories(this.data)}
                 </div>
-                <a href="" class="btn-view-all" tabindex="0">Lihat Semua</a>
+                <a href="/#/list" class="btn-view-all" tabindex="0">Lihat Semua</a>
             </article>
         `
     }

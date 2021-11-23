@@ -3,10 +3,12 @@ import Favorite from "../views/pages/favorite";
 import Detail from "../views/pages/detail";
 import Category from "../views/pages/category";
 import CulinarPage from "../views/pages/culinarPage";
+import ListPage from "../views/pages/listPage";
 
 const routes = {
     '/' : Home,
     '/home' : Home,
+    '/list' : ListPage,
     '/favorite' : Favorite,
     '/detail/:id' : Detail,
     '/category/:id' : Category,

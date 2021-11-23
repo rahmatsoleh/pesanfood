@@ -1,5 +1,3 @@
-import RestaurantApi from '../../data/restaurant-api';
-
 const Home = {
     async render(){
         return `
