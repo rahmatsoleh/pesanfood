@@ -70,10 +70,10 @@ const _cardFood = (data, image) => {
 const _form = () => `
     <form method="post">
         <label for="name">Nama</label>
-        <input type="text" name="name" id="name" required>
+        <input type="text" name="name" id="name-mobile" required>
         <label for="review">Komentar</label>
-        <textarea id="review" required></textarea>
-        <button type="submit" aria-label="Kirim Pesan Sekarang">Kirim <i class="fas fa-paper-plane"></i></button>
+        <textarea required></textarea>
+        <button type="submit" aria-label="Kirim Pesan Sekarang" class="submit">Kirim <i class="fas fa-paper-plane"></i></button>
     </form>
 `;
 

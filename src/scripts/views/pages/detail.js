@@ -3,6 +3,7 @@ import UrlParser from "../../routes/url-parser";
 import RestaurantApi from "../../data/restaurant-api";
 import ArticleDetail from "../templates/template-detail";
 import viewDesktop from '../templates/detail-desktop';
+import sendReview from '../../utils/send-review';
 import { Menu, Review, Description } from '../templates/detail-mobile';
 
 const Detail = {
@@ -43,9 +44,17 @@ const Detail = {
 
         navRating.addEventListener('click', function(){
             this.classList.add('active');
+            const contentDetail = document.querySelector('.content-detail');
             navMenu.classList.remove('active');
             navDesc.classList.remove('active');
-            document.querySelector('.content-detail').innerHTML = Review(restaurant);
+            contentDetail.innerHTML = Review(restaurant);
+
+            const submitMobile = contentDetail.querySelector('form');
+            submitMobile.addEventListener('submit', function(event){
+                event.preventDefault();
+                sendReview(this, url.id);
+            })
+
         })
 
         navDesc.addEventListener('click', function(){
@@ -53,6 +62,16 @@ const Detail = {
             navRating.classList.remove('active');
             navMenu.classList.remove('active');
             document.querySelector('.content-detail').innerHTML = Description(restaurant);
+        })
+
+        // Submit Review
+        const btnReview = document.querySelector('.desktop-review form');
+        btnReview.addEventListener('submit', function(event){
+            const contentDesktop = document.querySelector('.content-desktop');
+            event.preventDefault();
+            sendReview(this, url.id);
+
+            contentDesktop.innerHTML = viewDesktop(restaurant);
         })
     }
 }

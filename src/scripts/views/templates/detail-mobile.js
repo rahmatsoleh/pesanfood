@@ -1,4 +1,3 @@
-import CONFIG from '../../globals/config';
 import food from '../../../public/images/culinary/food.png';
 import drink from '../../../public/images/culinary/drink.jpg';
 import userDefault from '../../../public/images/user.png';

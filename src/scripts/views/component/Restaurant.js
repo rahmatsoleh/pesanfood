@@ -9,7 +9,7 @@ class Restaurant extends HTMLElement {
 
     async dataCard(){
         const data = await RestaurantApi.list();
-
+        
         let card = '';
         for(let item of data){
             let fullDescription = item.description.split('');

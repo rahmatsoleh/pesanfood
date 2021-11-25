@@ -1,8 +1,10 @@
 @use 'root';
+@use 'mixin';
 
 .content-desktop {
     display: none;
 }
+
 .article-detail {
     margin-top: 75px;
     padding-bottom: 1em;
@@ -14,9 +16,7 @@
     }
 
     .header-detail {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include mixin.flex(space-between, center);
         padding: 0 1em;
 
         .title-detail {
@@ -30,23 +30,13 @@
         }
 
         button {
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: red;
-            color: white;
-            font-size: 1.7em;
-            text-align: center;
-            line-height: 45px;
+            @include mixin.btn-favorite();
         }
     }
 
     .nav-detail {
-        display: flex;
+        @include mixin.flex(space-evenly, center);
         margin-top: 1.5em;
-        justify-content: space-evenly;
-        flex-wrap: nowrap;
         border-top: 1px solid root.$color-dark;
         border-bottom: 1px solid root.$color-dark;
 
@@ -88,18 +78,13 @@
 
         ul {
             li {
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: space-evenly;
-                align-items: top;
+                @include mixin.flex(space-evenly, top);
                 margin: 1em auto;
                 padding-bottom: .7em;
                 border-bottom: 1px solid rgba(0,0,0,.2);
 
                 img {
-                    width: 75px;
-                    height: 75px;
-                    border-radius: 3px;
+                    @include mixin.img-thumb();
                 }
 
                 div {
@@ -138,44 +123,9 @@
         }
 
         form {
-            width: 90%;
-            margin: 1em auto;
-
-            label {
-                display: block;
-            }
-
-            input {
-                font-size: 1em;
-                width: 100%;
-                margin-bottom: 1em;
-                border: 1px solid root.$color-scondary-1;
-                border-radius: 3px;
-            }
-
-            textarea {
-                display: block;
-                width: 100%;
-                height: 100px;
-                font-size: 12px;
-                border: 1px solid root.$color-scondary-1;
-                border-radius: 3px;
-            }
-
-            button {
-                display: block;
-                width: 100%;
-                max-width: 500px;
-                margin: 1em auto 2em;
-                color: white;
-                background-color: #0a0;
-                font-size: 1.2em;
-                font-weight: bold;
-                padding: .5em;
-                border-radius: 5px;
-            }
-
-            
+            @include mixin.form-review();        
+            padding: 0 2em;
+            box-sizing: border-box;
         }
 
         .card-review {
@@ -196,21 +146,7 @@
         }
 
         table {
-            width: 90%;
-            margin: 1em auto;
-            font-size: 1em;
-            
-            tr {
-                vertical-align: top;
-
-                td:first-child {
-                    min-width: 100px;
-                }
-
-                td:nth-child(2){
-                    width: 7px;
-                }
-            }
+            @include mixin.table-detail();
         }
     }
 }
@@ -230,9 +166,7 @@
         }
 
         section.header-desktop {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: nowrap;
+            @include mixin.flex(space-between, top);
             padding: 2em 1em;
             margin-top: 70px;
             background-color: white;
@@ -252,26 +186,15 @@
                 }
 
                 .title-info {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
+                    @include mixin.flex(space-between, center);
 
                     button {
-                        margin-right: 1em;
-                        border-radius: 25px;
-                        width: 45px;
-                        height: 45px;
-                        background-color: red;
-                        color: white;
-                        font-size: 1.5em;
-                        border: none;
-                        font-weight: bold;
+                        @include mixin.btn-favorite();
                     }
                 }
     
                 .rate {
-                    display: flex;
-                    align-items: center;
+                    @include mixin.flex(start, center);
                     margin-bottom: 1em;
     
                     p:first-child {
@@ -293,17 +216,7 @@
                 }
     
                 table {
-                    tr {
-                        vertical-align: top;
-    
-                        td:first-child {
-                            min-width: 100px;
-                        }
-    
-                        td:nth-child(2){
-                            width: 7px;
-                        }
-                    }
+                    @include mixin.table-detail();
                 }
             }
         }
@@ -317,33 +230,12 @@
                 color: root.$color-scondary-1;
             }
 
-            .card-menu::-webkit-scrollbar{
-                width: 0;
-            }
-
             .card-menu {
-                display: grid;
-                grid-auto-flow: column;
-                grid-gap: 1.5em;
-                width: 100%;
-                overflow-x: auto;
+                @include mixin.scroll-x();
                 padding: 2em;
-                box-sizing: border-box;
-                
-                li:hover {
-                    cursor: pointer;
-                    transform: translateY(-5px);
-                    transition: .5s;
-                }
 
                 li {
-                    list-style: none;
-                    width: 200px;
-                    border-radius: 5px;
-                    border: 1px solid #ccc;
-                    overflow: hidden;
-                    box-sizing: border-box;
-                    box-shadow: 0 0 10px rgba(0,0,0,.2);
+                    @include mixin.li-card(200px);
 
                     img {
                         width: 100%;
@@ -358,30 +250,15 @@
                     }
 
                     button {
-                        display: block;
-                        width: 90%;
-                        margin: 2em auto 1em;
-                        padding: .5em;
-                        font-size: 1em;
-                        font-weight: bold;
-                        background-color: #0a0;
-                        color: white;
-                        border-radius: 5px;
-                        cursor: pointer;
-                    }
-
-                    button:hover {
-                        background-color: rgb(0, 130, 0);
+                        @include mixin.btn-success();
                     }
                 }
             }
         }
 
         section.desktop-review {
+            @include mixin.flex(space-between, top);
             background-color: root.$color-light;
-            display: flex;
-            justify-content: space-between;
-            align-items: top;
             box-shadow: none;
 
             .customer-review {
@@ -400,10 +277,9 @@
                 ul {
 
                     li {
+                        @include mixin.flex(start, top);
                         padding: 1em 1em;
                         margin: 2em 0;
-                        display: flex;
-                        align-items: top;
                         border-bottom: 1px solid #ccc;
 
                         img {
@@ -429,47 +305,13 @@
                 width: 30%;
                 height: fit-content;
                 padding: 1em;
+                box-sizing: border-box;
+                overflow: hidden;
                 box-shadow: 0 0 10px rgba(0,0,0,.2);
                 background-color: white;
 
                 form {
-                    label {
-                        display: block;
-                        margin-top: 1em;
-                    }
-
-                    input {
-                        width: 100%;
-                        font-size: 1em;
-                        border: 1px solid root.$color-dark;
-                        border-radius: 3px;
-                    }
-
-                    textarea {
-                        display: block;
-                        width: 100%;
-                        height: 150px;
-                        font-size: 12px;
-                        border: 1px solid root.$color-dark;
-                        border-radius: 3px;
-                    }
-
-                    button {
-                        display: block;
-                        width: 100%;
-                        margin: 1em auto;
-                        padding: .5em;
-                        font-size: 1em;
-                        font-weight: bold;
-                        background-color: #0a0;
-                        color: white;
-                        border-radius: 5px;
-                    }
-
-                    button:hover {
-                        cursor: pointer;
-                        background-color: rgb(0,130,0);
-                    }
+                    @include mixin.form-review();
                 }
             }
         }
@@ -480,10 +322,7 @@
     .content-desktop {
         section.food-menu {
             .card-menu {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content:center;
-                align-items: top;
+                @include mixin.flex(center, top, wrap);
 
                 li {
                     height: fit-content;

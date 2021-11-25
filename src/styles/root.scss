@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;800&display=swap');
 
-
 // Color
 $color-primary : #E02401;
 $color-scondary-1 : #ab6d23;
@@ -22,6 +21,37 @@ body {
     background-color: $color-light;
 }
 
+.loader {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255,.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spiral {
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    border-top: 7px solid $color-scondary-2;
+    border-bottom: 7px solid $color-scondary-2;
+    border-right: 5px solid rgba(255,255,255,0);
+    border-left: 5px solid rgba(255,255,255,0);
+    border-radius: 50%;
+    animation: loading .5s linear infinite;
+}
+
+.d-none {
+    display: none;
+}
+
+
+
 @media screen and (min-width: 1200px) {
     main {
         width: 1200px;
@@ -29,3 +59,13 @@ body {
     }
 }
 
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
