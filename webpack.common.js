@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 
 module.exports = {
@@ -35,7 +36,31 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
-      favicon: path.resolve(__dirname,'src/public/images/favicon.jpg'),
+      favicon: path.resolve(__dirname,'src/public/images/favicon.png'),
+    }),
+    new WebpackPwaManifest({
+      name: 'PesanFood',
+      short_name: 'PesanFood',
+      description: 'Aplikasi Katalog Resto Terbaik',
+      background_color: '#ffffff',
+      theme_color: '#f78812',
+      crossorigin: 'use-credentials',
+      start_url: '/index.html',
+      inject: true,
+      ios: true,
+      icons: [
+        {
+          src: path.resolve(__dirname, 'src/public/images/logo.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
+          purpose: 'maskable',
+          ios: true,
+        },
+        {
+          src: path.resolve(__dirname, 'src/public/images/logo.png'),
+          sizes: '144x144',
+          purpose: 'any',
+        },
+      ],
     }),
   ],
 };
