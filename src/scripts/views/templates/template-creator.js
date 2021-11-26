@@ -23,9 +23,6 @@ const cardResto = (data) => `
     </section>
 `;
 
-const coba = (data) => {
-    console.log(data.name);
-}
 
-export {cardResto, coba};
+export {cardResto};
 

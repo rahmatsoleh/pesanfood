@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "web-server" : "http-server /dist/",
+    "lint": "eslint ./src",
     "start-dev": "webpack-dev-server --port 3000 --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "karma start"
@@ -15,12 +15,17 @@
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
+    "@dicebear/avatars": "^4.10.1",
+    "@dicebear/avatars-initials-sprites": "^4.10.1",
+    "@dicebear/avatars-male-sprites": "^4.10.1",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^3.6.0",
-    "eslint": "^7.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
     "file-loader": "^6.0.0",
     "font-awesome-sass": "^4.7.0",
     "html-webpack-plugin": "^4.3.0",
@@ -45,6 +50,7 @@
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "serviceworker-webpack-plugin": "^1.0.1"
   }
 }

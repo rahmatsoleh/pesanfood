@@ -1,3 +1,15 @@
+import '../component/Skip';
+import '../component/App-bar';
+import '../component/BurgerMenu';
+import '../component/Navbar';
+import '../component/Hero';
+import '../component/VariousCulinary';
+import '../component/Category';
+import '../component/Banner';
+import '../component/Restaurant';
+import '../component/ButtonTop';
+import '../component/Footer';
+
 const Home = {
     async render(){
         return `

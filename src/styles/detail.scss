@@ -129,8 +129,18 @@
         }
 
         .card-review {
+
+            li {
+                @include mixin.flex(flex-start, top);
+                width: 100%;
+                box-sizing: border-box;
+            }
+
             div {
-                width: 65%;
+                &:first-child {
+                    width: fit-content;
+                    margin: 0 1.5em;
+                }
 
                 h4 {
                     margin-bottom: .5em;
@@ -281,14 +291,8 @@
                         padding: 1em 1em;
                         margin: 2em 0;
                         border-bottom: 1px solid #ccc;
-
-                        img {
-                            width: 70px;
-                            height: 70px;
-                            margin-right: 1em;
-                        }
-
                         div {
+                            margin-right: 1em;
                             p {
                                 font-size: 12px;
                             }

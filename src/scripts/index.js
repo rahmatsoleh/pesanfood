@@ -1,16 +1,6 @@
 import '@fortawesome/fontawesome-free/js/all.js';
 import 'regenerator-runtime'; /* for async await transpile */
-import './views/component/Skip';
-import './views/component/App-bar';
-import './views/component/BurgerMenu';
-import './views/component/Navbar';
-import './views/component/Hero';
-import './views/component/VariousCulinary';
-import './views/component/Category';
-import './views/component/Banner';
-import './views/component/Restaurant';
-import './views/component/ButtonTop';
-import './views/component/Footer';
+import swRegister from './utils/sw-register';
 import App from './views/app';
 
 const app = new App({
@@ -23,5 +13,6 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
     app.renderPage();
+    swRegister();
 });
 

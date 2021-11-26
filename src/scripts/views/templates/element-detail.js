@@ -1,4 +1,5 @@
-import userDefault from '../../../public/images/user.png';
+import { createAvatar } from '@dicebear/avatars';
+import * as avatarStyle from '@dicebear/avatars-initials-sprites';
 
 const foodMenu = (data, image) => `
     <h3>Menu Makanan</h3>
@@ -47,6 +48,13 @@ const tableDetail = data => {
     `;
 }
 
+const generateAvatar = name => {
+    return createAvatar(avatarStyle, {
+        seed: name,
+        size : 70,
+        radius : 70,
+    });
+}
 
 const _cardFood = (data, image) => {
     let card = '';
@@ -83,7 +91,7 @@ const _cardReview = (data) => {
     for(let item of data){
         card+= `
         <li>
-            <img src="${userDefault}">
+            <div>${generateAvatar(item.name)}</div>
             <div>
                 <p>${item.date}</p>
                 <h4>${item.name}</h4>
