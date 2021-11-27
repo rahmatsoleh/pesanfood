@@ -23,7 +23,6 @@ const _header = (data) => `
                         <p><i class="fas fa-star"></i><span>${data.rating}</span></p>
                     </div>
                 </div>
-                <button aria-label="Add to Favorite"><i class="far fa-heart"></i></button>
             </div>
             <hr>
             ${tableDetail(data)}

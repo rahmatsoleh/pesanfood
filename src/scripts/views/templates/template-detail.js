@@ -13,7 +13,6 @@ const _header = (data) => `
             <h2>${data.name}</h2>
             <p><i class="fas fa-map-marker-alt"></i><span> ${data.city}</span></p>
         </div>
-        <button aria-label="Add to Favorite"><i class="far fa-heart"></i></button>
     </div>
 `;
 

@@ -34,7 +34,8 @@ class RestaurantApi {
 
       return responseJson;
     } catch (error) {
-      swal(`${error}`);
+      loader.classList.toggle('d-none');
+      swal('Upps...', 'Anda terhubung secara offline, Memungkinkan beberapa fitur tidak berfungsi dengan semestinya', 'error');
     }
   }
 
@@ -47,7 +48,8 @@ class RestaurantApi {
       loader.classList.toggle('d-none');
       return responseJson;
     } catch (error) {
-      console.log(error);
+      loader.classList.toggle('d-none');
+      swal('Upps...', 'Anda terhubung secara offline, Memungkinkan beberapa fitur tidak berfungsi dengan semestinya', 'error');
     }
   }
 }

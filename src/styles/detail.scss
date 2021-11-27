@@ -5,6 +5,17 @@
     display: none;
 }
 
+#like-button {
+    position: fixed;
+    z-index: 99;
+    bottom: 40px;
+    right: 40px;
+
+    button {
+        @include mixin.btn-favorite;
+    }
+}
+
 .article-detail {
     margin-top: 75px;
     padding-bottom: 1em;
@@ -29,9 +40,6 @@
             }
         }
 
-        button {
-            @include mixin.btn-favorite();
-        }
     }
 
     .nav-detail {
@@ -198,9 +206,6 @@
                 .title-info {
                     @include mixin.flex(space-between, center);
 
-                    button {
-                        @include mixin.btn-favorite();
-                    }
                 }
     
                 .rate {

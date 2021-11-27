@@ -7,7 +7,6 @@ import '../component/VariousCulinary';
 import '../component/Category';
 import '../component/Banner';
 import '../component/Restaurant';
-import '../component/ButtonTop';
 import '../component/Footer';
 
 const Home = {
@@ -22,7 +21,7 @@ const Home = {
   },
 
   async afterRender() {
-    console.log('oke');
+    return;
   },
 };
 

@@ -1,0 +1,36 @@
+@use 'root';
+@use 'mixin';
+
+.favorite {
+    padding: 2em 0;
+
+    h2 {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: root.$color-scondary-1;
+    }
+
+    .list-favorite {
+        .nothing {
+            display: block;
+            width: 100%;
+            margin-top: 1em;
+            text-align: center;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        .card {
+            @include mixin.card-resto();
+        }
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .favorite {
+        .list-favorite {
+            @include mixin.flex(center, top, wrap);
+        }
+    }
+}

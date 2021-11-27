@@ -23,4 +23,12 @@ const cardResto = (data) => `
     </section>
 `;
 
-export { cardResto };
+const createLikeButton = () => `
+    <button aria-label="Add to Favorite"><i class="far fa-heart"></i></button>
+`;
+
+const createLikedButton = () => `
+    <button aria-label="Unlike to Favorite"><i class="fas fa-heart"></i></button>
+`;
+
+export { cardResto, createLikeButton, createLikedButton };

@@ -5,6 +5,7 @@ import ArticleDetail from '../templates/template-detail';
 import viewDesktop from '../templates/detail-desktop';
 import sendReview from '../../utils/send-review';
 import { Menu, Review, Description } from '../templates/detail-mobile';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
   async render() {
@@ -21,6 +22,7 @@ const Detail = {
             <article class="content-desktop">
                 ${contentDesktop}
             </article>
+            <div id="like-button"></div>
         `;
   },
 
@@ -71,6 +73,20 @@ const Detail = {
       sendReview(this, url.id);
 
       contentDesktop.innerHTML = viewDesktop(restaurant);
+    });
+
+    // Like Button
+
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#like-button'),
+      resto: {
+        id: restaurant.id,
+        name: restaurant.name,
+        description: restaurant.description,
+        rating: restaurant.rating,
+        pictureId: restaurant.pictureId,
+        city: restaurant.city,
+      },
     });
   },
 };
