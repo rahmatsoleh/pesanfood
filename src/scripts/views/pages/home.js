@@ -11,18 +11,19 @@ import '../component/ButtonTop';
 import '../component/Footer';
 
 const Home = {
-    async render(){
-        return `
+  async render() {
+    return `
             <hero-element></hero-element>
             <various-culinary></various-culinary>
             <category-food></category-food>
             <banner-hero></banner-hero>
             <explore-resto></explore-resto>
         `;
-    },
+  },
 
-    async afterRender(){
-    }
-}
+  async afterRender() {
+    console.log('oke');
+  },
+};
 
 export default Home;

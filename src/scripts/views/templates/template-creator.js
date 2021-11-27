@@ -23,6 +23,4 @@ const cardResto = (data) => `
     </section>
 `;
 
-
-export {cardResto};
-
+export { cardResto };

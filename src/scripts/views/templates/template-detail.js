@@ -1,4 +1,4 @@
-import API_ENDPOINT from "../../globals/api-endpoint";
+import API_ENDPOINT from '../../globals/api-endpoint';
 
 const ArticleDetail = (data) => `
     ${_header(data)}
@@ -37,6 +37,5 @@ const _navigasi = (data) => `
 const _content = () => `
     <div class="content-detail"></div>
 `;
-
 
 export default ArticleDetail;

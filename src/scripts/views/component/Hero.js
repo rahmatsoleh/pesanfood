@@ -1,12 +1,12 @@
 import '../../../styles/hero.scss';
 
 class Hero extends HTMLElement {
-    connectedCallback(){
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render(){
-        this.innerHTML = `
+  render() {
+    this.innerHTML = `
             <div class="hero">
                 <div class="hero-text">
                     <span class="top-slogan"><p>Butuh makan diantar cepat ?</p></span>
@@ -17,13 +17,13 @@ class Hero extends HTMLElement {
             </div>
         `;
 
-        document.querySelector('.btn-order').onclick = this._order;
-    }
+    document.querySelector('.btn-order').onclick = this._order;
+  }
 
-    _order(){
-        const hero = document.querySelector('.hero');
-        window.scrollTo(0, hero.clientHeight);
-    }
+  _order() {
+    const hero = document.querySelector('.hero');
+    window.scrollTo(0, hero.clientHeight);
+  }
 }
 
-customElements.define('hero-element',Hero);
+customElements.define('hero-element', Hero);

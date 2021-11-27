@@ -21,13 +21,13 @@ const cardReview = (data) => `
     <ul class="card-review">${_cardReview(data)}</ul>
 `;
 
-const tableDetail = data => {
-    let category = [];
-    for(let item of data.categories){
-        category.push(item.name);
-    }
+const tableDetail = (data) => {
+  let category = [];
+  for (let item of data.categories) {
+    category.push(item.name);
+  }
 
-    return `
+  return `
         <table>
             <tr>
                 <td>Kategori</td>
@@ -46,21 +46,19 @@ const tableDetail = data => {
             </tr>
         </table>
     `;
-}
+};
 
-const generateAvatar = name => {
-    return createAvatar(avatarStyle, {
-        seed: name,
-        size : 70,
-        radius : 70,
-    });
-}
+const generateAvatar = (name) => createAvatar(avatarStyle, {
+  seed: name,
+  size: 70,
+  radius: 70,
+});
 
 const _cardFood = (data, image) => {
-    let card = '';
+  let card = '';
 
-    for(let item of data){
-        card+= `
+  for (let item of data) {
+    card += `
         <li>
             <img src="${image}">
             <div>
@@ -70,9 +68,9 @@ const _cardFood = (data, image) => {
             </div>
             <button aria-label="Tambah Keranjang"><i class="fas fa-plus"></i><span>Tambahkan</span></button>
         </li>
-        `
-    }
-    return card;
+        `;
+  }
+  return card;
 };
 
 const _form = () => `
@@ -86,10 +84,10 @@ const _form = () => `
 `;
 
 const _cardReview = (data) => {
-    let card = '';
+  let card = '';
 
-    for(let item of data){
-        card+= `
+  for (let item of data) {
+    card += `
         <li>
             <div>${generateAvatar(item.name)}</div>
             <div>
@@ -98,15 +96,15 @@ const _cardReview = (data) => {
                 <p>${item.review}</p>
             </div>
         </li>
-        `
-    }
-    return card;
-}
+        `;
+  }
+  return card;
+};
 
 export { 
-    foodMenu, 
-    drinkMenu, 
-    formReview, 
-    cardReview,
-    tableDetail
+  foodMenu, 
+  drinkMenu, 
+  formReview, 
+  cardReview,
+  tableDetail,
 };

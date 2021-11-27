@@ -5,12 +5,12 @@ import hero3 from '../../../public/images/heros/hero-image_3.jpg';
 import hero4 from '../../../public/images/heros/hero-image_4.jpg';
 
 class Banner extends HTMLElement {
-    connectedCallback(){
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render(){
-        this.innerHTML = `
+  render() {
+    this.innerHTML = `
             <article class="banner">
                 <section class="slider">
                     <div class="slide">
@@ -32,8 +32,7 @@ class Banner extends HTMLElement {
                 </section>
             </article>
         `;
-
-    }
+  }
 }
 
 customElements.define('banner-hero', Banner);

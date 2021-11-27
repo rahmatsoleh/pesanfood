@@ -3,7 +3,7 @@ import drink from '../../../public/images/culinary/drink.jpg';
 import API_ENDPOINT from '../../globals/api-endpoint';
 import { tableDetail, foodMenu, drinkMenu, formReview, cardReview } from './element-detail';
 
-const viewDesktop = data => `
+const viewDesktop = (data) => `
     ${_header(data)}
     ${_foodMenu(data)}
     ${_review(data.customerReviews)}

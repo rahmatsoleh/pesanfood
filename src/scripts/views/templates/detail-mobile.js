@@ -1,7 +1,7 @@
-import food from '../../../public/images/culinary/food.png';
-import drink from '../../../public/images/culinary/drink.jpg';
 import { createAvatar } from '@dicebear/avatars';
 import * as avatarStyle from '@dicebear/avatars-initials-sprites';
+import food from '../../../public/images/culinary/food.png';
+import drink from '../../../public/images/culinary/drink.jpg';
 import { formReview } from './element-detail';
 
 const Menu = (data) => `${foodMenu(data)}${drinkMenu(data)}`;
@@ -19,12 +19,12 @@ const Description = (data) => `
 
 const foodMenu = (data) => `
     <h3>Menu Makanan</h3>
-    <ul class="card-menu">${_cardFood(data.menus.foods , food)}</ul>
+    <ul class="card-menu">${_cardFood(data.menus.foods, food)}</ul>
 `;
 
 const drinkMenu = (data) => `
     <h3>Menu Minuman</h3>
-    <ul class="card-menu">${_cardFood(data.menus.drinks , drink)}</ul>
+    <ul class="card-menu">${_cardFood(data.menus.drinks, drink)}</ul>
 `;
 
 const cardReview = (data) => `
@@ -32,13 +32,13 @@ const cardReview = (data) => `
     <ul class="card-review">${_cardReview(data)}</ul>
 `;
 
-const tableDetail = data => {
-    let category = [];
-    for(let item of data.categories){
-        category.push(item.name);
-    }
+const tableDetail = (data) => {
+  let category = [];
+  for (let item of data.categories) {
+    category.push(item.name);
+  }
 
-    return `
+  return `
         <table>
             <tr>
                 <td>Kategori</td>
@@ -57,21 +57,19 @@ const tableDetail = data => {
             </tr>
         </table>
     `;
-}
+};
 
-const generateAvatar = name => {
-    return createAvatar(avatarStyle, {
-        seed: name,
-        size : 60,
-        radius : 60,
-    });
-}
+const generateAvatar = (name) => createAvatar(avatarStyle, {
+  seed: name,
+  size: 60,
+  radius: 60,
+});
 
 const _cardFood = (data, image) => {
-    let card = '';
+  let card = '';
 
-    for(let item of data){
-        card+= `
+  for (let item of data) {
+    card += `
         <li>
             <img src="${image}">
             <div>
@@ -81,16 +79,16 @@ const _cardFood = (data, image) => {
             </div>
             <button aria-label="Tambah Keranjang"><i class="fas fa-plus"></i><span>Tambahkan</span></button>
         </li>
-        `
-    }
-    return card;
+        `;
+  }
+  return card;
 };
 
 const _cardReview = (data) => {
-    let card = '';
+  let card = '';
 
-    for(let item of data){
-        card+= `
+  for (let item of data) {
+    card += `
         <li>
             <div>${generateAvatar(item.name)}</div>
             <div>
@@ -99,9 +97,9 @@ const _cardReview = (data) => {
                 <p>${item.review}</p>
             </div>
         </li>
-        `
-    }
-    return card;
-}
+        `;
+  }
+  return card;
+};
 
 export { Menu, Review, Description };

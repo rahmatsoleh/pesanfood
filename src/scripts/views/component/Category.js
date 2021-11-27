@@ -8,12 +8,12 @@ import sop from '../../../public/images/categori/sop.jpg';
 import modern from '../../../public/images/categori/modern.jpg';
 
 class Category extends HTMLElement {
-    connectedCallback(){
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    async render(){        
-        this.innerHTML = `
+  async render() {        
+    this.innerHTML = `
             <article class="category">
                 <h2 tabindex="0">Kategori Makanan</h2>
                 <div class="data-category">
@@ -97,7 +97,7 @@ class Category extends HTMLElement {
                 <div>
             </article>
         `;
-    }
+  }
 }
 
 customElements.define('category-food', Category);

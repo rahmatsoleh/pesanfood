@@ -9,50 +9,50 @@ import kari from '../../../public/images/culinary/kari.jpg';
 import roti from '../../../public/images/culinary/roti.jpg';
 
 class VariousCulinary extends HTMLElement {
-    constructor(){
-        super();
-        this.data = [
-            {
-                img : jus,
-                title : 'Jus',
-            },
-            {
-                img : bebek,
-                title : 'Bebek',
-            },
-            {
-                img : sosis,
-                title : 'Sosis',
-            },
-            {
-                img : salad,
-                title : 'Salad',
-            },
-            {
-                img : daging,
-                title : 'Daging',
-            },
-            {
-                img : tumis,
-                title : 'Tumis',
-            },
-            {
-                img : kari,
-                title : 'Kari',
-            },
-            {
-                img : roti,
-                title : 'Roti',
-            },
-        ];
-    }
+  constructor() {
+    super();
+    this.data = [
+      {
+        img: jus,
+        title: 'Jus',
+      },
+      {
+        img: bebek,
+        title: 'Bebek',
+      },
+      {
+        img: sosis,
+        title: 'Sosis',
+      },
+      {
+        img: salad,
+        title: 'Salad',
+      },
+      {
+        img: daging,
+        title: 'Daging',
+      },
+      {
+        img: tumis,
+        title: 'Tumis',
+      },
+      {
+        img: kari,
+        title: 'Kari',
+      },
+      {
+        img: roti,
+        title: 'Roti',
+      },
+    ];
+  }
 
-    connectedCallback(){
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render(){
-        this.innerHTML = `
+  render() {
+    this.innerHTML = `
             <article class="culinary">
                 <h2 tabindex="0">Aneka Kuliner</h2>
                 <div class="various">
@@ -60,13 +60,13 @@ class VariousCulinary extends HTMLElement {
                 </div>
                 <a href="/#/list" class="btn-view-all" tabindex="0">Lihat Semua</a>
             </article>
-        `
-    }
+        `;
+  }
 
-    _categories(data){
-        let card = '';
-        for(let item of data){
-            card += `
+  _categories(data) {
+    let card = '';
+    for (let item of data) {
+      card += `
             <section>
                 <a href="#/culinary/${item.title.toLowerCase()}">
                     <div class="zoom-image">
@@ -76,10 +76,10 @@ class VariousCulinary extends HTMLElement {
                 </a>
             </section>
             `;
-        }
-
-        return card;
     }
+
+    return card;
+  }
 }
 
 customElements.define('various-culinary', VariousCulinary);

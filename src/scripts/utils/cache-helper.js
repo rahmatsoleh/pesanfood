@@ -1,5 +1,5 @@
-import CONFIG from '../globals/config';
 import swal from 'sweetalert';
+import CONFIG from '../globals/config';
  
 const CacheHelper = {
   async cachingAppShell(requests) {
@@ -31,7 +31,7 @@ const CacheHelper = {
     const response = await fetch(request);
  
     if (!response || response.status !== 200) {
-      swal("Upps...!", "Anda terhubung secara offline. Memungkinkan Beberapa fitur tidak berfungsi", "error");
+      swal('Upps...!', 'Anda terhubung secara offline. Memungkinkan Beberapa fitur tidak berfungsi', 'error');
       return response;
     }
  
