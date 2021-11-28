@@ -1,0 +1,50 @@
+@use 'root';
+
+article.about {
+    margin-top: 75px;
+    text-align: center;
+    min-height: 80vh;
+
+    h2 {
+        font-size: 2em;
+        color: root.$color-scondary-1;
+    }
+
+    img {
+        margin-top: 1em;
+        width: 150px;
+        border-radius: 50%;
+        border: 3px solid #ccc;
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+    }
+
+    .name {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: .5em;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 1.5em;
+        border-radius: 50px;
+        padding: .7em 1em;
+        width: fit-content;
+        background-color: root.$color-scondary-2;
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: root.$color-scondary-1;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    article.about {
+        img {
+            width: 200px;
+        }
+    }
+}
