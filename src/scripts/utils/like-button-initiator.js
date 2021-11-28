@@ -1,5 +1,7 @@
 import swal from 'sweetalert';
 import FavoriteDB from '../data/favorite-idb';
+import NotificationHelper from './notification-helper';
+import API_ENDPOINT from '../globals/api-endpoint';
 import { createLikeButton, createLikedButton } from '../views/templates/template-creator';
 
 const LikeButtonInitiator = {
@@ -34,6 +36,13 @@ const LikeButtonInitiator = {
       await FavoriteDB.putResto(this._resto);
       swal('Success', `${this._resto.name} berhasil ditambahkan ke halaman favorite`, 'success');
       this._renderButton();
+      NotificationHelper.sendNotification({
+        title: `${this._resto.name} ditambahkan ke halaman favorite`,
+        options: {
+          body: this._resto.description,
+          image: API_ENDPOINT.PICTURE_MD(this._resto.pictureId),
+        },
+      });
     });
   },
    

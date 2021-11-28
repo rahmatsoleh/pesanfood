@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./src",
-    "start-dev": "webpack-dev-server --port 3000 --config webpack.dev.js",
+    "start-dev": "webpack-dev-server --port 3001 --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "karma start"
   },
