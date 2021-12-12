@@ -159,6 +159,8 @@
                     font-size: 12px;
                     color: #555;
                     font-weight: normal;
+                    overflow-wrap: break-word;
+                    word-break: break-word;
                 }
             }
         }
@@ -300,6 +302,8 @@
                             margin-right: 1em;
                             p {
                                 font-size: 12px;
+                                overflow-wrap: break-word;
+                                word-break: break-word;
                             }
 
                             h4 {

@@ -16,8 +16,8 @@
     }
 
     border: none;
-    width: 45px;
-    height: 45px;
+    min-width: 45px;
+    min-height: 45px;
     border-radius: 50%;
     background-color: red;
     color: white;
@@ -58,11 +58,13 @@
 
     label {
         display: block;
+        font-size: 1em;
     }
 
     input {
-        font-size: 1em;
+        font-size: 1.3em;
         width: 100%;
+        min-height: 45px;
         margin-bottom: 1em;
         border: 1px solid root.$color-scondary-1;
         border-radius: 3px;
@@ -72,7 +74,7 @@
         display: block;
         width: 100%;
         height: 150px;
-        font-size: 12px;
+        font-size: 1em;
         border: 1px solid root.$color-scondary-1;
         border-radius: 3px;
     }
