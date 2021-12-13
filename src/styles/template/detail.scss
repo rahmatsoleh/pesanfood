@@ -1,5 +1,5 @@
-@use 'root';
-@use 'mixin';
+@use '../lib/root' as root;
+@use '../lib/mixin' as mixin;
 
 .content-desktop {
     display: none;

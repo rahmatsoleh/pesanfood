@@ -1,4 +1,4 @@
-import '../../../styles/banner.scss';
+import '../../../styles/component/banner.scss';
 import hero1 from '../../../public/images/heros/hero-image_1.jpg';
 import hero2 from '../../../public/images/heros/hero-image_2.jpg';
 import hero3 from '../../../public/images/heros/hero-image_3.jpg';

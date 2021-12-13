@@ -1,4 +1,4 @@
-import '../../../styles/Restaurant.scss';
+import '../../../styles/component/Restaurant.scss';
 import RestaurantApi from '../../data/restaurant-api';
 import API_ENDPOINT from '../../globals/api-endpoint';
 

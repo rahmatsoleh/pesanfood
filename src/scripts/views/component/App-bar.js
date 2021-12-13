@@ -1,4 +1,4 @@
-import '../../../styles/header.scss';
+import '../../../styles/component/header.scss';
 
 class AppBar extends HTMLElement {
   connectedCallback() {

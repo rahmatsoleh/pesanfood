@@ -1,4 +1,4 @@
-import '../../../styles/buttontop.scss';
+import '../../../styles/component/buttontop.scss';
 
 class ButtonTop extends HTMLElement {
   connectedCallback() {

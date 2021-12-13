@@ -1,4 +1,4 @@
-import '../../../styles/category.scss';
+import '../../../styles/component/category.scss';
 import italia from '../../../public/images/categori/italia.jpg';
 import sunda from '../../../public/images/categori/sunda.jpg';
 import spanyol from '../../../public/images/categori/spanyol.jpg';

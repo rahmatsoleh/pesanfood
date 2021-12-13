@@ -1,5 +1,5 @@
-@use 'root';
-@use 'mixin';
+@use '../lib/root' as root;
+@use '../lib/mixin' as mixin;
 
 .favorite {
     padding: 2em 0;

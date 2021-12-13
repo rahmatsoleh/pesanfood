@@ -1,4 +1,4 @@
-import '../../../styles/find-resto.scss';
+// import '../../../styles/find-resto.scss';
 import CONFIG from '../../globals/config';
 
 const cardResto = (data) => `

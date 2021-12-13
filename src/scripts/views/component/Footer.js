@@ -1,4 +1,4 @@
-import '../../../styles/footer.scss';
+import '../../../styles/component/footer.scss';
 
 class Footer extends HTMLElement {
   connectedCallback() {

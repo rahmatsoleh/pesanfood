@@ -1,4 +1,4 @@
-import '../../../styles/about.scss';
+import '../../../styles/component/about.scss';
 import Rahmsol from '../../../public/images/rahmsol.png';
 
 class About extends HTMLElement {

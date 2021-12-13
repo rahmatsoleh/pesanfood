@@ -1,4 +1,3 @@
-import '../../../styles/detail.scss';
 import UrlParser from '../../routes/url-parser';
 import RestaurantApi from '../../data/restaurant-api';
 import ArticleDetail from '../templates/template-detail';
@@ -6,6 +5,7 @@ import viewDesktop from '../templates/detail-desktop';
 import sendReview from '../../utils/send-review';
 import { Menu, Review, Description } from '../templates/detail-mobile';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import FavoriteDB from '../../data/favorite-idb';
 
 const Detail = {
   async render() {
@@ -79,6 +79,7 @@ const Detail = {
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#like-button'),
+      favoriteResto: FavoriteDB,
       resto: {
         id: restaurant.id,
         name: restaurant.name,

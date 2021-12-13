@@ -1,4 +1,4 @@
-import '../../../styles/culinary.scss';
+import '../../../styles/component/culinary.scss';
 import jus from '../../../public/images/culinary/minuman.jpg';
 import bebek from '../../../public/images/culinary/bebek.jpg';
 import sosis from '../../../public/images/culinary/sosis.jpg';
