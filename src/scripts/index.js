@@ -1,4 +1,4 @@
-import '@fortawesome/fontawesome-free/js/all.js';
+// import '@fortawesome/fontawesome-free/js/all.js';
 import 'regenerator-runtime'; /* for async await transpile */
 // import swRegister from './utils/sw-register';
 import App from './views/app';

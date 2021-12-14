@@ -8,6 +8,7 @@
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "build-image": "node sharp.js",
+    "build-analyzer": "webpack --config webpack.analyzer.js",
     "test": "karma start",
     "e2e": "codeceptjs run --steps",
     "audit": "lighthouse http://localhost:8080/ --view"
@@ -21,7 +22,6 @@
     "@dicebear/avatars": "^4.10.1",
     "@dicebear/avatars-initials-sprites": "^4.10.1",
     "@dicebear/avatars-male-sprites": "^4.10.1",
-    "@fortawesome/fontawesome-free": "^5.15.4",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "codeceptjs": "^3.2.2",
@@ -54,6 +54,7 @@
     "style-loader": "^1.2.1",
     "sweetalert": "^2.1.2",
     "webpack": "^4.46.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",

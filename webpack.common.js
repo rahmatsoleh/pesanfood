@@ -12,7 +12,31 @@ module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 20000,
+      maxSize: 70000,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      automaticNameDelimiter: '~',
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+    minimize: true,
   },
   module: {
     rules: [
@@ -67,32 +91,32 @@ module.exports = {
         })
       ]
     }),
-    // new WebpackPwaManifest({
-    //   name: 'PesanFood',
-    //   short_name: 'PesanFood',
-    //   description: 'Aplikasi Katalog Resto Terbaik',
-    //   background_color: '#ffffff',
-    //   theme_color: '#f78812',
-    //   crossorigin: 'use-credentials',
-    //   start_url: '/index.html',
-    //   inject: true,
-    //   ios: true,
-    //   icons: [
-    //     {
-    //       src: path.resolve(__dirname, 'src/public/images/logo.png'),
-    //       sizes: [96, 128, 192, 256, 384, 512],
-    //       purpose: 'maskable',
-    //       ios: true,
-    //     },
-    //     {
-    //       src: path.resolve(__dirname, 'src/public/images/logo.png'),
-    //       sizes: '144x144',
-    //       purpose: 'any',
-    //     },
-    //   ],
-    // }),
-    // new ServiceWorkerWebpackPlugin({
-    //   entry: path.resolve(__dirname, './src/scripts/sw.js'),
-    // }),
+    new WebpackPwaManifest({
+      name: 'PesanFood',
+      short_name: 'PesanFood',
+      description: 'Aplikasi Katalog Resto Terbaik',
+      background_color: '#ffffff',
+      theme_color: '#f78812',
+      crossorigin: 'use-credentials',
+      start_url: '/index.html',
+      inject: true,
+      ios: true,
+      icons: [
+        {
+          src: path.resolve(__dirname, 'src/public/images/logo.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
+          purpose: 'maskable',
+          ios: true,
+        },
+        {
+          src: path.resolve(__dirname, 'src/public/images/logo.png'),
+          sizes: '144x144',
+          purpose: 'any',
+        },
+      ],
+    }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.resolve(__dirname, './src/scripts/sw.js'),
+    }),
   ],
 };
