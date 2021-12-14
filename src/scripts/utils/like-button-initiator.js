@@ -1,6 +1,5 @@
 import swal from 'sweetalert';
 // import NotificationHelper from './notification-helper';
-import API_ENDPOINT from '../globals/api-endpoint';
 import { createLikeButton, createLikedButton } from '../views/templates/template-creator';
 
 const LikeButtonInitiator = {
