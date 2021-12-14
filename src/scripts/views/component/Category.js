@@ -1,11 +1,11 @@
 import '../../../styles/component/category.scss';
-import italia from '../../../public/images/categori/italia.jpg';
-import sunda from '../../../public/images/categori/sunda.jpg';
-import spanyol from '../../../public/images/categori/spanyol.jpg';
-import bali from '../../../public/images/categori/bali.jpg';
-import jawa from '../../../public/images/categori/jawa.jpg';
-import sop from '../../../public/images/categori/sop.jpg';
-import modern from '../../../public/images/categori/modern.jpg';
+// import italia from '../../../public/images/categori/italia.jpg';
+// import sunda from '../../../public/images/categori/sunda.jpg';
+// import spanyol from '../../../public/images/categori/spanyol.jpg';
+// import bali from '../../../public/images/categori/bali.jpg';
+// import jawa from '../../../public/images/categori/jawa.jpg';
+// import sop from '../../../public/images/categori/sop.jpg';
+// import modern from '../../../public/images/categori/modern.jpg';
 
 class Category extends HTMLElement {
   connectedCallback() {
@@ -20,7 +20,7 @@ class Category extends HTMLElement {
                     <section>
                         <a href="#/category/italia">
                             <div class="picture">
-                                <img src="${italia}" alt="Italia"/>
+                                <img src="images/categori/italia.jpg" alt="Italia"/>
                             </div>
                             <div class="desc-category">
                                 <h3 tabindex="0">Italia</h3>
@@ -31,7 +31,7 @@ class Category extends HTMLElement {
                     <section>
                         <a href="#/category/sunda">
                             <div class="picture">
-                                <img src="${sunda}" alt="Sunda"/>
+                                <img src="images/categori/sunda.jpg" alt="Sunda"/>
                             </div>
                             <div class="desc-category">
                                 <h3 tabindex="0">Sunda</h3>
@@ -42,7 +42,7 @@ class Category extends HTMLElement {
                     <section>
                         <a href="#/category/modern">
                             <div class="picture">
-                                <img src="${modern}" alt="Modern"/>
+                                <img src="images/categori/modern.jpg" alt="Modern"/>
                             </div>
                             <div class="desc-category">
                                 <h3 tabindex="0">Modern</h3>
@@ -53,7 +53,7 @@ class Category extends HTMLElement {
                     <section>
                         <a href="#/category/jawa">
                             <div class="picture">
-                                <img src="${jawa}" alt="Jawa"/>
+                                <img src="images/categori/jawa.jpg" alt="Jawa"/>
                             </div>
                             <div class="desc-category">
                                 <h3 tabindex="0">Jawa</h3>
@@ -64,7 +64,7 @@ class Category extends HTMLElement {
                     <section>
                         <a href="#/category/sop">
                             <div class="picture">
-                                <img src="${sop}" alt="Sop"/>
+                                <img src="images/categori/sop.jpg" alt="Sop"/>
                             </div>
                             <div class="desc-category">
                                 <h3 tabindex="0">Soup</h3>
@@ -75,7 +75,7 @@ class Category extends HTMLElement {
                     <section>
                         <a href="#/category/bali">
                             <div class="picture">
-                                <img src="${bali}" alt="Bali"/>
+                                <img src="images/categori/bali.jpg" alt="Bali"/>
                             </div>
                             <div class="desc-category">
                                 <h3 tabindex="0">Bali</h3>
@@ -86,7 +86,7 @@ class Category extends HTMLElement {
                     <section>
                         <a href="#/category/spanyol">
                             <div class="picture">
-                                <img src="${spanyol}" alt="Spanyol"/>
+                                <img src="images/categori/spanyol.jpg" alt="Spanyol"/>
                             </div>
                             <div class="desc-category">
                                 <h3 tabindex="0">Spanyol</h3>

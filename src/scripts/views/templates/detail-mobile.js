@@ -1,7 +1,5 @@
 import { createAvatar } from '@dicebear/avatars';
 import * as avatarStyle from '@dicebear/avatars-initials-sprites';
-import food from '../../../public/images/culinary/food.png';
-import drink from '../../../public/images/culinary/drink.jpg';
 import { formReview } from './element-detail';
 
 const Menu = (data) => `${foodMenu(data)}${drinkMenu(data)}`;
@@ -19,12 +17,12 @@ const Description = (data) => `
 
 const foodMenu = (data) => `
     <h3>Menu Makanan</h3>
-    <ul class="card-menu">${_cardFood(data.menus.foods, food)}</ul>
+    <ul class="card-menu">${_cardFood(data.menus.foods)}</ul>
 `;
 
 const drinkMenu = (data) => `
     <h3>Menu Minuman</h3>
-    <ul class="card-menu">${_cardFood(data.menus.drinks, drink)}</ul>
+    <ul class="card-menu">${_cardFood(data.menus.drinks)}</ul>
 `;
 
 const cardReview = (data) => `
@@ -65,13 +63,13 @@ const generateAvatar = (name) => createAvatar(avatarStyle, {
   radius: 60,
 });
 
-const _cardFood = (data, image) => {
+const _cardFood = (data) => {
   let card = '';
 
   for (let item of data) {
     card += `
         <li>
-            <img src="${image}">
+            <img src="images/culinary/food.png">
             <div>
                 <h4>${item.name}</h4>
                 <p>Lorem ipsum sit amet dolor ...</p>

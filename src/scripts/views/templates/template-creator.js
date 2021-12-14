@@ -1,11 +1,12 @@
-// import '../../../styles/find-resto.scss';
-import CONFIG from '../../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import API_ENDPOINT from '../../globals/api-endpoint';
 
 const cardResto = (data) => `
     <section>
     <a href="#/detail/${data.id}" class="card">
-        <div class="image">
-            <img src="${CONFIG.BASE_URL}/images/medium/${data.pictureId}" alt="${data.name}">
+        <div class="image skeleton-img">
+            <img class="lazyload" data-src="${API_ENDPOINT.PICTURE_LG(data.pictureId)}" alt="${data.name}">
         </div>
         <div class="description">
             <div class="title">
@@ -32,3 +33,4 @@ const createLikedButton = () => `
 `;
 
 export { cardResto, createLikeButton, createLikedButton };
+

@@ -1,8 +1,8 @@
 import '../../../styles/component/banner.scss';
-import hero1 from '../../../public/images/heros/hero-image_1.jpg';
-import hero2 from '../../../public/images/heros/hero-image_2.jpg';
-import hero3 from '../../../public/images/heros/hero-image_3.jpg';
-import hero4 from '../../../public/images/heros/hero-image_4.jpg';
+// import hero1 from '../../../public/images/heros/hero-image_1.jpg';
+// import hero2 from '../../../public/images/heros/hero-image_2.jpg';
+// import hero3 from '../../../public/images/heros/hero-image_3.jpg';
+// import hero4 from '../../../public/images/heros/hero-image_4.jpg';
 
 class Banner extends HTMLElement {
   connectedCallback() {
@@ -14,16 +14,16 @@ class Banner extends HTMLElement {
             <article class="banner">
                 <section class="slider">
                     <div class="slide">
-                        <img src="${hero1}" alt="">
+                        <img src="images/slider/hero-image_1.jpg" alt="">
                     </div>
                     <div class="slide">
-                        <img src="${hero2}" alt="">
+                        <img src="images/slider/hero-image_2.jpg" alt="">
                     </div>
                     <div class="slide">
-                        <img src="${hero3}" alt="">
+                        <img src="images/slider/hero-image_3.jpg" alt="">
                     </div>
                     <div class="slide">
-                        <img src="${hero4}" alt="">
+                        <img src="images/slider/hero-image_4.jpg" alt="">
                     </div>
                 </section>
                 <section class="banner-post">

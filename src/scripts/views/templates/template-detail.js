@@ -7,7 +7,12 @@ const ArticleDetail = (data) => `
 `;
 
 const _header = (data) => `
-    <img src="${API_ENDPOINT.PICTURE_MD(data.pictureId)}" alt="${data.name}">
+    <picture>
+        <source media="(max-width: 720px)" srcset="${API_ENDPOINT.PICTURE_SM(data.pictureId)}">
+        <source media="(max-width: 1024px)" srcset="${API_ENDPOINT.PICTURE_MD(data.pictureId)}">
+        <source media="(max-width: 1200px)" srcset="${API_ENDPOINT.PICTURE_LG(data.pictureId)}">
+        <img src="${API_ENDPOINT.PICTURE_LG(data.pictureId)}" alt="${data.name}">
+    </picture>
     <div class="header-detail">
         <div class="title-detail">
             <h2>${data.name}</h2>

@@ -1,47 +1,47 @@
 import '../../../styles/component/culinary.scss';
-import jus from '../../../public/images/culinary/minuman.jpg';
-import bebek from '../../../public/images/culinary/bebek.jpg';
-import sosis from '../../../public/images/culinary/sosis.jpg';
-import salad from '../../../public/images/culinary/salad.jpg';
-import daging from '../../../public/images/culinary/daging.jpg';
-import tumis from '../../../public/images/culinary/tumis.jpg';
-import kari from '../../../public/images/culinary/kari.jpg';
-import roti from '../../../public/images/culinary/roti.jpg';
+// import jus from '../../../public/images/culinary/minuman.jpg';
+// import bebek from '../../../public/images/culinary/bebek.jpg';
+// import sosis from '../../../public/images/culinary/sosis.jpg';
+// import salad from '../../../public/images/culinary/salad.jpg';
+// import daging from '../../../public/images/culinary/daging.jpg';
+// import tumis from '../../../public/images/culinary/tumis.jpg';
+// import kari from '../../../public/images/culinary/kari.jpg';
+// import roti from '../../../public/images/culinary/roti.jpg';
 
 class VariousCulinary extends HTMLElement {
   constructor() {
     super();
     this.data = [
       {
-        img: jus,
+        img: 'images/culinary/minuman.jpg',
         title: 'Jus',
       },
       {
-        img: bebek,
+        img: 'images/culinary/bebek.jpg',
         title: 'Bebek',
       },
       {
-        img: sosis,
+        img: 'images/culinary/sosis.jpg',
         title: 'Sosis',
       },
       {
-        img: salad,
+        img: 'images/culinary/salad.jpg',
         title: 'Salad',
       },
       {
-        img: daging,
+        img: 'images/culinary/daging.jpg',
         title: 'Daging',
       },
       {
-        img: tumis,
+        img: 'images/culinary/tumis.jpg',
         title: 'Tumis',
       },
       {
-        img: kari,
+        img: 'images/culinary/kari.jpg',
         title: 'Kari',
       },
       {
-        img: roti,
+        img: 'images/culinary/roti.jpg',
         title: 'Roti',
       },
     ];

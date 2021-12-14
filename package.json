@@ -7,8 +7,10 @@
     "lint": "eslint ./src",
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "build-image": "node sharp.js",
     "test": "karma start",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "audit": "lighthouse http://localhost:8080/ --view"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -31,6 +33,9 @@
     "file-loader": "^6.0.0",
     "font-awesome-sass": "^4.7.0",
     "html-webpack-plugin": "^4.3.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webpack-plugin": "^2.4.2",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^3.5.0",
     "karma": "^5.1.0",
@@ -40,10 +45,12 @@
     "karma-scss-preprocessor": "^4.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^4.0.2",
+    "lighthouse": "^9.1.0",
     "node-sass": "^4.14.1",
     "puppeteer": "^12.0.0",
     "sass": "^1.43.3",
     "sass-loader": "^10.1.1",
+    "sharp": "^0.29.3",
     "style-loader": "^1.2.1",
     "sweetalert": "^2.1.2",
     "webpack": "^4.46.0",
@@ -55,6 +62,7 @@
   },
   "dependencies": {
     "idb": "^7.0.0",
+    "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.5",
     "serviceworker-webpack-plugin": "^1.0.1"
   }

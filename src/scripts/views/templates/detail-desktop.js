@@ -1,5 +1,3 @@
-import food from '../../../public/images/culinary/food.png';
-import drink from '../../../public/images/culinary/drink.jpg';
 import API_ENDPOINT from '../../globals/api-endpoint';
 import { tableDetail, foodMenu, drinkMenu, formReview, cardReview } from './element-detail';
 
@@ -12,7 +10,12 @@ const viewDesktop = (data) => `
 const _header = (data) => `
     <section class="header-desktop">
         <div class="image">
-            <img src="${API_ENDPOINT.PICTURE_MD(data.pictureId)}" alt="${data.name}">
+            <picture>
+                <source media="(max-width: 720px)" srcset="${API_ENDPOINT.PICTURE_SM(data.pictureId)}">
+                <source media="(max-width: 1024px)" srcset="${API_ENDPOINT.PICTURE_MD(data.pictureId)}">
+                <source media="(max-width: 1200px)" srcset="${API_ENDPOINT.PICTURE_LG(data.pictureId)}">
+                <img src="${API_ENDPOINT.PICTURE_LG(data.pictureId)}" alt="${data.name}">
+            </picture>
         </div>
         <div class="info">
             <div class="title-info">
@@ -32,10 +35,10 @@ const _header = (data) => `
 
 const _foodMenu = (data) => `
     <section class="food-menu">
-        ${foodMenu(data.menus.foods, food)}
+        ${foodMenu(data.menus.foods)}
     </section>
     <section class="food-menu">
-        ${drinkMenu(data.menus.drinks, drink)}
+        ${drinkMenu(data.menus.drinks)}
     </section>
 `;
 

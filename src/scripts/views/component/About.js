@@ -1,5 +1,5 @@
 import '../../../styles/component/about.scss';
-import Rahmsol from '../../../public/images/rahmsol.png';
+// import Rahmsol from '../../../public/images/rahmsol.png';
 
 class About extends HTMLElement {
   connectedCallback() {
@@ -10,7 +10,7 @@ class About extends HTMLElement {
     this.innerHTML = `
               <article class="about">
                 <h2>Developer</h2>
-                <img src="${Rahmsol}" alt="">
+                <img src="images/rahmsol.png" alt="">
                 <p class="name">Rahmat Soleh</p>
                 <p class="email">solehr619@gmail.com</p>
                 <a href="https://github.com/rahmatsoleh/pesanfood" target="_blank" rel="noreferrer">Source Code</a>

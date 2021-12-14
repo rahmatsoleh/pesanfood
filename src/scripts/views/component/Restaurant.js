@@ -1,6 +1,8 @@
 import '../../../styles/component/Restaurant.scss';
 import RestaurantApi from '../../data/restaurant-api';
 import API_ENDPOINT from '../../globals/api-endpoint';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 class Restaurant extends HTMLElement {
   connectedCallback() {
@@ -22,8 +24,8 @@ class Restaurant extends HTMLElement {
 
       card += `
             <div class="card">
-                <div class="image">
-                    <img src="${API_ENDPOINT.PICTURE_MD(item.pictureId)}" alt="${item.name}">
+                <div class="image skeleton-img">
+                    <img class="lazyload" data-src="${API_ENDPOINT.PICTURE_SM(item.pictureId)}" alt="${item.name}">
                 </div>
                 <h3 tabindex="0">${item.name}</h3>
                 <div class="describe">

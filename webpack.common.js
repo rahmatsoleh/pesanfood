@@ -1,6 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminPngquant = require('imagemin-pngquant');
 const path = require('path');
 
 module.exports = {
@@ -20,10 +25,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {
-              name: '[name].[hash].[ext]',
-              outputPath: 'images',
-            },
+            // options: {
+            //   name: '[name].[hash].[ext]',
+            //   outputPath: 'images',
+            // },
           },
         ],
       },
@@ -39,32 +44,55 @@ module.exports = {
       filename: 'index.html',
       favicon: path.resolve(__dirname, 'src/public/images/favicon.png'),
     }),
-    new WebpackPwaManifest({
-      name: 'PesanFood',
-      short_name: 'PesanFood',
-      description: 'Aplikasi Katalog Resto Terbaik',
-      background_color: '#ffffff',
-      theme_color: '#f78812',
-      crossorigin: 'use-credentials',
-      start_url: '/index.html',
-      inject: true,
-      ios: true,
-      icons: [
+    new CopyWebpackPlugin({
+      patterns: [
         {
-          src: path.resolve(__dirname, 'src/public/images/logo.png'),
-          sizes: [96, 128, 192, 256, 384, 512],
-          purpose: 'maskable',
-          ios: true,
-        },
-        {
-          src: path.resolve(__dirname, 'src/public/images/logo.png'),
-          sizes: '144x144',
-          purpose: 'any',
-        },
-      ],
+          from: path.resolve(__dirname, 'src/public'),
+          to: path.resolve(__dirname, 'dist'),
+          globOptions: {
+            ignore: ['**/images/hero/**']
+          }
+        }
+      ]
     }),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+    new CleanWebpackPlugin(),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+        ImageminPngquant({
+          quality: [0.3, 0.5],
+        })
+      ]
     }),
+    // new WebpackPwaManifest({
+    //   name: 'PesanFood',
+    //   short_name: 'PesanFood',
+    //   description: 'Aplikasi Katalog Resto Terbaik',
+    //   background_color: '#ffffff',
+    //   theme_color: '#f78812',
+    //   crossorigin: 'use-credentials',
+    //   start_url: '/index.html',
+    //   inject: true,
+    //   ios: true,
+    //   icons: [
+    //     {
+    //       src: path.resolve(__dirname, 'src/public/images/logo.png'),
+    //       sizes: [96, 128, 192, 256, 384, 512],
+    //       purpose: 'maskable',
+    //       ios: true,
+    //     },
+    //     {
+    //       src: path.resolve(__dirname, 'src/public/images/logo.png'),
+    //       sizes: '144x144',
+    //       purpose: 'any',
+    //     },
+    //   ],
+    // }),
+    // new ServiceWorkerWebpackPlugin({
+    //   entry: path.resolve(__dirname, './src/scripts/sw.js'),
+    // }),
   ],
 };
