@@ -1,12 +1,4 @@
 import '../../../styles/component/culinary.scss';
-// import jus from '../../../public/images/culinary/minuman.jpg';
-// import bebek from '../../../public/images/culinary/bebek.jpg';
-// import sosis from '../../../public/images/culinary/sosis.jpg';
-// import salad from '../../../public/images/culinary/salad.jpg';
-// import daging from '../../../public/images/culinary/daging.jpg';
-// import tumis from '../../../public/images/culinary/tumis.jpg';
-// import kari from '../../../public/images/culinary/kari.jpg';
-// import roti from '../../../public/images/culinary/roti.jpg';
 
 class VariousCulinary extends HTMLElement {
   constructor() {

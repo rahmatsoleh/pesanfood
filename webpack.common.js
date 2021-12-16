@@ -49,10 +49,6 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            // options: {
-            //   name: '[name].[hash].[ext]',
-            //   outputPath: 'images',
-            // },
           },
         ],
       },
@@ -74,10 +70,10 @@ module.exports = {
           from: path.resolve(__dirname, 'src/public'),
           to: path.resolve(__dirname, 'dist'),
           globOptions: {
-            ignore: ['**/images/hero/**']
-          }
-        }
-      ]
+            ignore: ['**/images/hero/**'],
+          },
+        },
+      ],
     }),
     new CleanWebpackPlugin(),
     new ImageminWebpackPlugin({
@@ -88,8 +84,8 @@ module.exports = {
         }),
         ImageminPngquant({
           quality: [0.3, 0.5],
-        })
-      ]
+        }),
+      ],
     }),
     new WebpackPwaManifest({
       name: 'PesanFood',

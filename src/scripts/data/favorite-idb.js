@@ -11,7 +11,7 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
  
 const FavoriteDB = {
   async getResto(id) {
-    if ( !id ) return;
+    if (!id) return;
 
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },

@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./src",
+    "lint": "eslint ./src ./specs ./e2e",
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "build-image": "node sharp.js",
-    "build-analyzer": "webpack --config webpack.analyzer.js",
     "test": "karma start",
     "e2e": "codeceptjs run --steps",
     "audit": "lighthouse http://localhost:8080/ --view"
@@ -44,6 +43,7 @@
     "karma-jasmine": "^3.3.1",
     "karma-scss-preprocessor": "^4.0.0",
     "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.32",
     "karma-webpack": "^4.0.2",
     "lighthouse": "^9.1.0",
     "node-sass": "^4.14.1",

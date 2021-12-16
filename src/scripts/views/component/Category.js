@@ -1,11 +1,4 @@
 import '../../../styles/component/category.scss';
-// import italia from '../../../public/images/categori/italia.jpg';
-// import sunda from '../../../public/images/categori/sunda.jpg';
-// import spanyol from '../../../public/images/categori/spanyol.jpg';
-// import bali from '../../../public/images/categori/bali.jpg';
-// import jawa from '../../../public/images/categori/jawa.jpg';
-// import sop from '../../../public/images/categori/sop.jpg';
-// import modern from '../../../public/images/categori/modern.jpg';
 
 class Category extends HTMLElement {
   connectedCallback() {

@@ -1,5 +1,4 @@
 import '../../../styles/component/about.scss';
-// import Rahmsol from '../../../public/images/rahmsol.png';
 
 class About extends HTMLElement {
   connectedCallback() {

@@ -1,5 +1,4 @@
 import '../component/Hero';
-// import '../../../styles/favorite.scss';
 import FavoriteDB from '../../data/favorite-idb';
 import { cardResto } from '../templates/template-creator';
 

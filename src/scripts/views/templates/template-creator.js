@@ -33,4 +33,3 @@ const createLikedButton = () => `
 `;
 
 export { cardResto, createLikeButton, createLikedButton };
-

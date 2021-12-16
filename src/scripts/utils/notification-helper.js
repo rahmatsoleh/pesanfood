@@ -6,7 +6,6 @@ const NotificationHelper = {
     }
      
     if (!this._checkPermission()) {
-      console.log('User did not yet granted permission');
       this._requestPermission();
       return;
     }
